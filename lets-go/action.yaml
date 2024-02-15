@@ -1,0 +1,38 @@
+schema-version: v2
+kind: action
+metadata:
+  name: lets-go
+  display-name: lets-go
+  description: Action para stackspot para instalar o go em ambiente local e de produção (Let's go)
+  version: 0.0.1
+spec:
+  type: shell
+  docs:
+    pt-br: docs/pt-br/docs.md
+    en-us: docs/en-us/docs.md
+  repository: https://github.com/silastgoes/stackspot-lets-go.git
+  inputs:
+    - label: Type some label
+      name: random-name
+      type: text
+      required: false
+      pattern: '([A-Z][a-z]+)+'
+      help: 'Inform your resource name (e.g.: Client)'
+  shell:
+    workdir: .
+    requirements-check:
+      - check-command:
+          linux: |
+            echo "Hello World!"
+          mac: |
+            echo "Hello World!"
+          windows: |
+            echo "Hello World!"
+        info: "Failed saying hello to world."
+    script:
+      linux: |
+        echo "Hello World!"
+      mac: |
+        echo "Hello World!"
+      windows: |
+        echo "Hello World!"
